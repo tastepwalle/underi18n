@@ -3,6 +3,8 @@
 `underi18n` is a minimalistic approach to internationalization for javascript-based templates.
 It can work in conjuction with other libraries providing the templates, such as [underscore](http://underscorejs.org/#template) or [moustache](https://github.com/janl/mustache.js). It supports variable substitution and AMD loading.
 
+[_Edit:_ To supplement this library, I have bolted on some support for Django and its internationalization framework. In terms of modifications to the original repository, I have only modified the default end delimiter to be `_%>` (originally `%>`, which can clobber some regexes when used with underscore variable tags). The remainder of my additions can be seen in the appended section 'Django Integration' below ~PWALLE 10/8/15]
+
 ## Catalogs
 
 `underi18n` uses a simple JSON format for catalogs, following the standard `gettext` format. In the following example,
@@ -41,11 +43,13 @@ Typically variables in templates are indicated with some delimiter. In mustache 
 
 ```javascript
 templateSettings: {
-    translate: /<%_([\s\S]+?)%>/g,
+    translate: /<%_([\s\S]+?)_%>/g,
     i18nVarLeftDel: '<%=',
     i18nVarRightDel: '%>'
 }
 ```
+
+[_EDIT:_ Note the above modification to the original library ~PWALLE]
 
 so, `<%_ i18n %>` are set to denote translatable strings and `<%= var %>` is used to denote variables inside a template.
 
@@ -89,3 +93,18 @@ would yield
 
 underi18n will register as an anonymous module if you use [requireJS](http://requirejs.org/).
 
+## Django Integration [PWALLE]
+
+The Django web framework provides some nice tools of its own for i18n internationalization, but I've brewed up quite a few headaches working with the Javascript components of these tools. I've built a process for integrating the original underi18n library with Django internationalization using two additional custom commands `make_messages` and `compile_template_messages`. These commands 1) parse underscorejs template files and add text marked for translation to the standard `django.po` file(s), and 2) build the underi18n translation catalog(s).
+
+### Usage
+
+Generate the .mo file(s) needed for Django internationalization *and* the underi18n catalog(s):
+
+```
+python manage.py make_messages -d <comma-sep template dirs> -x <comma-sep template exts> [other args]
+python manage.py compilemessages
+python manage.py compile_template_mesages [-d <translations directory default=static/translations>]
+```
+
+Usage within Javascript source is the same as original library, though _please note the change to the default end delimiter._
