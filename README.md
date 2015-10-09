@@ -102,7 +102,7 @@ The Django web framework provides some nice tools of its own for i18n internatio
 Generate the .mo file(s) needed for Django internationalization *and* the underi18n catalog(s):
 
 ```
-python manage.py make_messages -d <comma-sep template dirs> -x <comma-sep template exts> [other args]
+python manage.py make_messages -t <comma-sep template dirs> -x <comma-sep template exts> [other args]
 python manage.py compilemessages
 python manage.py compile_template_mesages [-o <output directory for catalogs default=static/translations>]
 ```
