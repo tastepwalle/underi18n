@@ -3,7 +3,7 @@
 `underi18n` is a minimalistic approach to internationalization for javascript-based templates.
 It can work in conjuction with other libraries providing the templates, such as [underscore](http://underscorejs.org/#template) or [moustache](https://github.com/janl/mustache.js). It supports variable substitution and AMD loading.
 
-[_Edit:_ To supplement this library, I have bolted on some support for Django and its internationalization framework. In terms of modifications to the original repository, I have only modified the default end delimiter to be `_%>` (originally `%>`, which can clobber some regexes when used with underscore variable tags). The remainder of my additions can be seen in the appended section 'Django Integration' below ~PWALLE 10/8/15]
+[__Edit:__ To supplement this library, I have bolted on some support for Django and its internationalization framework. In terms of modifications to the original repository, I have only modified the default end delimiter to be `_%>` (originally `%>`, which can clobber some regexes when used with underscore variable tags). The remainder of my additions can be seen in the appended section 'Django Integration' below ~PWALLE 10/8/15]
 
 ## Catalogs
 
@@ -49,7 +49,7 @@ templateSettings: {
 }
 ```
 
-[_EDIT:_ Note the above modification to the original library ~PWALLE]
+[__EDIT:__ Note the above modification to the original library ~PWALLE]
 
 so, `<%_ i18n %>` are set to denote translatable strings and `<%= var %>` is used to denote variables inside a template.
 
