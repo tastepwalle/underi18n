@@ -1,12 +1,13 @@
 {
-  "name": "underi18n",
+  "name": "django-underi18n",
   "main": "underi18n.js",
   "version": "1.0.0",
-  "homepage": "https://github.com/ggozad/underi18n",
+  "homepage": "https://github.com/tastepwalle/underi18n",
   "authors": [
-    "Yiorgis Gozadinos <ggozad@crypho.com>"
+    "Yiorgis Gozadinos <ggozad@crypho.com>",
+    "Paul Elliott <paul@mymusictaste.com>"
   ],
-  "description": "A minimalistic approach to internationalization for javascript-based templates.",
+  "description": "A minimalistic approach to internationalization for javascript-based templates [EDIT: with django support bolted on]",
   "keywords": [
     "i18n",
     "internationalization"
