@@ -49,7 +49,7 @@
         },
 
         templateSettings: {
-            translate: /<%_([\s\S]+?)%>/g,
+            translate: /<%_([\s\S]+?)_%>/g,
             i18nVarLeftDel: '<%=',
             i18nVarRightDel: '%>'
         }
