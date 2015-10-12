@@ -95,7 +95,7 @@ underi18n will register as an anonymous module if you use [requireJS](http://req
 
 ## Django Integration [PWALLE]
 
-The Django web framework provides some nice tools of its own for i18n internationalization, but I've brewed up quite a few headaches working with the Javascript components of these tools. I've built a process for integrating the original underi18n library with Django internationalization using two additional custom commands `make_messages` and `compile_template_messages`. These commands 1) parse underscorejs template files and add text marked for translation to the standard `django.po` file(s), and 2) build the underi18n translation catalog(s).
+The Django web framework provides some nice tools of its own for i18n internationalization, but I've brewed up quite a few headaches working with the Javascript components of these tools. I've built a process for integrating the original underi18n library with Django internationalization using two custom commands `make_messages` and `compile_messages`. These commands 1) parse underscorejs template files and add text marked for translation to the standard `django.po` file(s), and 2) build the underi18n translation catalog(s). In addition to handling the frontend portion of i18n translation, these commands also handle standard Django internationalization by piping to the original django-admin commands `makemessages` and `compilemessages`.
 
 ### Usage
 
