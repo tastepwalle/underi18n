@@ -103,8 +103,7 @@ Generate the .mo file(s) needed for Django internationalization *and* the underi
 
 ```
 python manage.py make_messages -t <comma-sep template dirs> -x <comma-sep template exts> [other args]
-python manage.py compilemessages
-python manage.py compile_template_mesages [-o <output directory for catalogs, defaults in settings.LOCALE_PATHS>]
+python manage.py compile_messages [-o <output directory for catalogs, defaults in settings.LOCALE_PATHS>]
 ```
 
 Usage within Javascript source is the same as original library, though _please note the change to the default end delimiter._
